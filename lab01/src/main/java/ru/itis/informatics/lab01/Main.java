@@ -1,31 +1,17 @@
 package ru.itis.informatics.lab01;
 
-import java.util.Stack;
-
 public class Main {
 	public static void main(String[] args) {
-		final Store store = new Store(100, "Kazan, Kremlevskaya 35");
+		final QueueG<Integer> queueG = new QueueG<>();
 
-		final SimpleImmutableMerch merch =
-						new SimpleImmutableMerch(123, 100, 1000, store);
+		queueG.add(20);
+		queueG.add(23);
+		queueG.add(26);
 
-		System.out.println(merch);
+		System.out.println(queueG);
 
-		merch.getStore().setAddress("Kazan, Universitetskaya 40");
-
-		System.out.println(merch);
-
-		/*-----*/
-
-		final GenericStack<Integer> genericStack = new GenericStack<>();
-
-		genericStack.push(20);
-		genericStack.push(30);
-
-		System.out.println(genericStack.pop());
-
-		/*
-		HW: Stack, Queue, Deque generics
-		 */
+		queueG.remove();
+		
+		System.out.println(queueG);
 	}
 }
