@@ -12,7 +12,8 @@ public final class QueueG<T> {
 
 	/*----- Fields -----*/
 
-	private Node front, rear;
+	private Node front;
+	private Node rear;
 	private int queueSize;
 
 
@@ -98,7 +99,7 @@ public final class QueueG<T> {
 
 		Node currentFront = front;
 		for (int i = 0; i < queueSize; i++) {
-			stringBuilder.append(i > 0 && i < queueSize ? ", " : "");
+			stringBuilder.append(i > 0 ? ", " : "");
 			stringBuilder.append(currentFront.data);
 			currentFront = currentFront.next;
 		}
