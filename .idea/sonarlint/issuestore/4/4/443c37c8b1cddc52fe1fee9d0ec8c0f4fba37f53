@@ -1,6 +1,3 @@
 
-N	java:S106"9Replace this use of System.out or System.err by a logger.(½››Í
-N	java:S106"9Replace this use of System.out or System.err by a logger.(½››Í
-S	java:S106"9Replace this use of System.out or System.err by a logger.(ê·åšýÿÿÿÿ
-G
-java:S1128",Remove this unused import 'java.util.Stack'.(ÞÈ†üúÿÿÿÿ
+T	java:S106"9Replace this use of System.out or System.err by a logger.(²ñå+8ïÖæÿä0
+T	java:S106"9Replace this use of System.out or System.err by a logger.(²ñå+8ðÖæÿä0

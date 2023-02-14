@@ -4,7 +4,7 @@ public final class QueueG<T> {
 
 	/*----- Inner types -----*/
 
-	private static class Node {
+	private static final class Node {
 		Object data;
 		Node next;
 	}
@@ -72,6 +72,24 @@ public final class QueueG<T> {
 		queueSize++;
 	}
 
+	/**
+	 * Returnes the end of the queue.
+	 * 
+	 * @return the end of the queue
+	 */
+	public T back() {
+		return queueSize > 0 ? (T)rear.data : null;
+	}
+
+	/**
+	 * Returnees the head of the queue.
+	 * 
+	 * @return the head of the queue
+	 */
+	public T front() {
+		return queueSize > 0 ? (T)front.data : null;
+	}
+	
 	@Override
 	public String toString() {
 		StringBuilder stringBuilder = new StringBuilder();
