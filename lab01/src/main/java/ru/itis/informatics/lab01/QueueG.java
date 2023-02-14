@@ -1,11 +1,13 @@
 package ru.itis.informatics.lab01;
 
-public final class QueueG<T> {
+import ru.itis.informatics.lab01.person.Person;
+
+public final class QueueG<T extends Person> {
 
 	/*----- Inner types -----*/
 
 	private static final class Node {
-		Object data;
+		Person data;
 		Node next;
 	}
 
@@ -86,7 +88,7 @@ public final class QueueG<T> {
 
 	/**
 	 * Returnes the end of the queue.
-	 * 
+	 *
 	 * @return the end of the queue
 	 */
 	public T back() {
@@ -95,13 +97,17 @@ public final class QueueG<T> {
 
 	/**
 	 * Returnes the head of the queue.
-	 * 
+	 *
 	 * @return the head of the queue
 	 */
 	public T front() {
 		return queueSize > 0 ? (T)front.data : null;
 	}
-	
+
+	public String peekLastPersonName() {
+		return rear.data.getName();
+	}
+
 	@Override
 	public String toString() {
 		StringBuilder stringBuilder = new StringBuilder();
@@ -110,8 +116,7 @@ public final class QueueG<T> {
 
 		Node currentFront = front;
 		for (int i = 0; i < queueSize; i++) {
-			stringBuilder.append(i > 0 ? ", " : "");
-			stringBuilder.append(currentFront.data);
+			stringBuilder.append(i > 0 ? ", " : "").append(currentFront.data);
 			currentFront = currentFront.next;
 		}
 
