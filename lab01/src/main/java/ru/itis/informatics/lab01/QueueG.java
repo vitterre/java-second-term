@@ -82,7 +82,7 @@ public final class QueueG<T> {
 	}
 
 	/**
-	 * Returnees the head of the queue.
+	 * Returnes the head of the queue.
 	 * 
 	 * @return the head of the queue
 	 */
