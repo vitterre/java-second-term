@@ -12,8 +12,19 @@ public final class QueueG<T> {
 
 	/*----- Fields -----*/
 
+	/**
+	 * The first element in the queue.
+	 */
 	private Node front;
+
+	/**
+	 * The last element in the queue.
+	 */
 	private Node rear;
+
+	/**
+	 * The size of the queue.
+	 */
 	private int queueSize;
 
 
