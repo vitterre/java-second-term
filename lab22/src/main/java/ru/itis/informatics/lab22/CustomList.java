@@ -146,13 +146,19 @@ public class CustomList<E> implements List<E> {
 	 * @return {@code true}
 	 */
 	public boolean add(E e) {
+		// Если размер нашего динамического массива
+		// совпадает с вместимостью array, то логично, что
+		// мы не можешь добавить в наш массив элементы вообще
 		if (size == CAPACITY) {
 			return false;
 		}
-		if (size == array.length) {
-			array = Arrays.copyOf(array, array.length * 2);
-		}
-		array[size++] = e;
+
+		// Этот код срабатывает тогда, когда size < CAPACITY,
+		// что означает, что мы можем еще добавить элементы
+		// в наш динамический массив
+		array[size++] = e; // Добавляем элемент (то есть присваиваем
+		                   // элементу с индексом size + 1 значение
+		                   // аргумента
 		return true;
 	}
 
@@ -495,13 +501,18 @@ public class CustomList<E> implements List<E> {
 	 *                                   fromIndex > toIndex})
 	 */
 	@Override
-	public List<E> subList(int fromIndex, int toIndex) {
+	public CustomList<E> subList(int fromIndex, int toIndex) {
+		// В этом методе мы возвращаем массив, содержащий элементы
+		// нашего массива с индекса fromIndex до индекса toIndex
+
 		CustomList<E> customList = new CustomList<>();
 
+		// Здесь проводим чисто логические проверки, ничего удивительного
 		if (fromIndex < 0 || toIndex > size || fromIndex > toIndex) {
 			throw new IndexOutOfBoundsException();
 		}
 
+		// С fromIndex до toIndex заполняем новый динамический массив
 		for (int i = fromIndex; i <= toIndex; i++) {
 			customList.add(array[i]);
 		}
