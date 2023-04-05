@@ -5,12 +5,6 @@ import java.util.Collection;
 import java.util.Iterator;
 import java.util.Set;
 
-/**
- * todo: do something
- * fixme: fix me
- * note: useful note
- * @param <E>
- */
 public class CustomSet<E> implements Set<E> {
 
 	/*----- Fields -----*/

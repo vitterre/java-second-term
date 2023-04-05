@@ -24,7 +24,7 @@ public class Main {
 		System.out.println(set);
 
 		// Removing
-		set.remove(1);
+		set.remove(2);
 		System.out.println(set);
 
 		// Contains
@@ -36,5 +36,7 @@ public class Main {
 		// Clearing
 		set.clear();
 		System.out.println(set);
+
+		System.out.println("A".equals("A"));
 	}
 }
